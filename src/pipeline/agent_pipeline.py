@@ -33,7 +33,7 @@ class AgentPipeline:
         """Step 1: Extract intent from user query."""
         # Simulated agent work
         await asyncio.sleep(0.5)
-        
+
         # Enforce structured output via Pydantic model
         return Step1Output(
             query=raw_input.get("user_query", ""),
@@ -45,7 +45,7 @@ class AgentPipeline:
         # Enforce strict step execution deadline (Fixes Timeouts)
         async with asyncio.timeout(self.step_timeout):
             await asyncio.sleep(0.5)  # Simulating external tool/LLM call
-            
+
             output = Step2Output(
                 intent=step1_result.intent,
                 confidence_score=0.95,
@@ -68,10 +68,10 @@ class AgentPipeline:
         try:
             # Step 1: Parse input
             step1_out = await self.execute_step_1(raw_input)
-            
+
             # Step 2: Process step with guardrails
             step2_out = await self.execute_step_2(step1_out)
-            
+
             return {
                 "status": "success",
                 "final_output": step2_out.model_dump()
@@ -91,7 +91,8 @@ class AgentPipeline:
 if __name__ == "__main__":
     pipeline = AgentPipeline()
     sample_request = {"user_query": "Analyze stock trends for Q2"}
-    
+
     result = asyncio.run(pipeline.run(sample_request))
     print("Pipeline Execution Result:")
     print(result)
+    
