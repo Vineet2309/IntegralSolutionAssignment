@@ -30,4 +30,3 @@ def test_agent_pipeline_timeout():
 
     assert result["status"] == "error"
     assert "timed out" in result["message"]
-    

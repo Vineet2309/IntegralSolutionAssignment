@@ -95,4 +95,3 @@ if __name__ == "__main__":
     result = asyncio.run(pipeline.run(sample_request))
     print("Pipeline Execution Result:")
     print(result)
-    

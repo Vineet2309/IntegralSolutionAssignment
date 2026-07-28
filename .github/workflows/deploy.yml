@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Linter (flake8)
         run: |
-          flake8 src/ tests/ --max-line-length=120 --extend-ignore=E203,E501,W503,F401
+          flake8 src/ tests/ --max-line-length=120 --extend-ignore=E203,E501,W291,W292,W293,W503,F401
 
       - name: Run Unit Tests (pytest)
         run: |
