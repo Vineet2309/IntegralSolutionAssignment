@@ -1,7 +1,7 @@
 import pytest
 import asyncio
 from src.pipeline.agent_pipeline import AgentPipeline
-from src.optimization.token_optimizer import calculate_tokens
+from src.optimization.token_optimization import calculate_tokens
 
 
 def test_token_calculation():
