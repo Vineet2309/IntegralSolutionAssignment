@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Unit Tests (pytest)
         run: |
-          pytest tests/
+          python -m pytest tests/
 
   deploy-staging:
     name: Deploy to Staging
